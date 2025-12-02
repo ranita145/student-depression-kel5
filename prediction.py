@@ -1,13 +1,10 @@
-# prediction.py
 import pandas as pd
 import joblib
 import requests
 from io import BytesIO
 
-# --- URL model di Google Drive (punya kamu) ---
 FILE_ID = "1xtI6w3HYyormFkK10Zy95IVgi1HXJV7s"
 MODEL_URL = f"https://drive.google.com/uc?export=download&id={FILE_ID}"
-
 
 def load_model():
     """
@@ -19,8 +16,6 @@ def load_model():
     model = joblib.load(BytesIO(response.content))
     return model
 
-
-# Load sekali, dipakai berulang
 model = load_model()
 
 FEATURES = [
@@ -34,7 +29,6 @@ FEATURES = [
     "Family History of Mental Illness",
     "Have you ever had suicidal thoughts ?"
 ]
-
 
 def predict_depression(input_dict):
     """
