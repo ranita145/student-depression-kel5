@@ -2,7 +2,7 @@ import streamlit as st
 from prediction import predict_depression
 
 st.title("Prediksi Depresi Mahasiswa")
-st.write("Model: **Random Forest Classifier** (1 metode)")
+st.write("Model: **Random Forest Classifier** (di-load dari Google Drive)")
 
 st.header("Input Data")
 
